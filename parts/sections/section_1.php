@@ -54,77 +54,72 @@ if ($queryconfiguracao_site->have_posts()) {
         $segundo = get_post_meta($post->ID, '_segundo', true);
     } ?>
 
-    <section class="section-1">
-        <div class="background-section-1">
-            <div class="logo">
-                <?php
-                if ($imagemLogo === "") { ?>
-                    <img src="wp-content\themes\maquina-trafego-tema\assets\images\logo.png">
-                <?php
-                } else { ?>
-                    <img src="<?= $imagemFundo ?>" height="75px">
-                <?php
-                }
-                ?>
-            </div>
-            <div class="btn-comercial">
+    <header class="header">
+        <div class="header-container">
+            <?php
+            if ($imagemLogo === "") { ?>
+                <img src="wp-content\themes\maquina-trafego-tema\assets\images\logo.png" class="header-logo" width="280px">
+            <?php
+            } else { ?>
+                <img src="<?= $imagemFundo ?>" class="header-logo" width="280px">
+            <?php
+            }
+            ?>
+            <div class="alinhamento">
                 <a href="<?= $linkWppBtnComercial ?>" target="_blank">
-                    <button><?= $textoBotaoComercial ?></button>
+                    <button class="btn-comercial-header"><?= $textoBotaoComercial ?></button>
                 </a>
             </div>
-            <div class="text-section-1">
-                <span style="color: <?= $corTexto1TituloPrincipal ?>"><?= $texto1TituloPrincipal ?><span style="color: <?= $corTexto2TituloPrincipal ?>"><?= $texto2TituloPrincipal ?></span><span style="color: <?= $corTexto3TituloPrincipal ?>"><?= $texto3TituloPrincipal ?></span></span>
+            <div class="alinhamento">
+                <div class="header-text">
+                    <span style="color: <?= $corTexto1TituloPrincipal ?>"><?= $texto1TituloPrincipal ?><span style="color: <?= $corTexto2TituloPrincipal ?>"><?= $texto2TituloPrincipal ?></span><span style="color: <?= $corTexto3TituloPrincipal ?>"><?= $texto3TituloPrincipal ?></span></span>
+                </div>
             </div>
-            <div class="metodo-valido" style="background-image: linear-gradient(80deg, <?= $corFundoTextoDestaque ?>33 0%, #ea860000 49%)">
-                <i class="fa-regular fa-circle-check fa-2x"></i>
-                <span style="color: <?= $corTextoDestaque ?>;"><?= $textoDestaque ?><u style="color: <?= $corTextoDestaque ?>;"><?= $textoDestaqueUnderline ?></u></span>
+            <div class="alinhamento">
+                <div class="metodo-valido-header">
+                    <i class="fa-regular fa-circle-check fa-2xl"></i>
+                    <span style="color: <?= $corTextoDestaque ?>;"><?= $textoDestaque ?><u style="color: <?= $corTextoDestaque ?>;"><?= $textoDestaqueUnderline ?></u></span>
+                </div>
             </div>
-            <div class="btn-inscrever-se">
-                <a href="<?= $linkRedirecionamentoBotao ?>" target="_blank">
-                    <button style="background-color: <?= $corBotaoPrincipal ?>; color: <?= $corTextpBotaoPrincipal ?>">
-                        <span><?= $botaoPrincipalTextoSup ?></span>
-                        <br>
-                        <span style="font-size: 0.6em; font-weight: 500;"><?= $botaoPrincipalTextoInf ?></span>
-                    </button>
-                </a>
+            <div class="alinhamento">
+                <div class="btn-inscrever-header">
+                    <a href="<?= $linkRedirecionamentoBotao ?>" target="_blank">
+                        <button style="background-color: <?= $corBotaoPrincipal ?>; color: <?= $corTextpBotaoPrincipal ?>">
+                            <span><?= $botaoPrincipalTextoSup ?></span>
+                            <br>
+                            <span style="font-size: 0.6em; font-weight: 500;"><?= $botaoPrincipalTextoInf ?></span>
+                        </button>
+                    </a>
+                </div>
             </div>
-            <div class="bg-mtc">
-                <?php
-                if ($imagemFundo === "") { ?>
-                    <img src="wp-content\themes\maquina-trafego-tema\assets\images\bg_mtc_22_adriano (1).jpg">
-                <?php
-                } else { ?>
-                    <img src="<?= $imagemFundo ?>" height="800px">
-                <?php
-                }
-                ?>
-            </div>
+        </div>
+    </header>
 
-            <div class="background-section-1-encerramento" style="background-color: <?= $corBackgroundCronometro ?>;">
-                <div class="notificar">
-                    <div class="notificar-box" style="background-color: <?= $corFundoCronometro ?>;">
-                        <i class="fa-solid fa-bell fa-2x"></i>
+    <section class="section-1" style="background-color: <?= $corBackgroundCronometro ?>;">
+        <div class="section-1-container">
+            <div class="notificar">
+                <div class="notificar-box">
+                    <i class="fa-solid fa-bell fa-2x"></i>
+                </div>
+                <div class="text-notificar">
+                    <span style="color: <?= $corTextosCronometro ?>;"><?= $textoInscricoesCronometro ?></span>
+                </div>
+                <div class="encerramento">
+                    <div class="dias" style="background-color: <?= $corFundoCronometro ?>;">
+                        <span id="dias" style="color: <?= $corTextosCronometro ?>;">0</span>
+                        <p style=" color: <?= $corTextosCronometro ?>;">DIAS</p>
                     </div>
-                    <div class="text-notificar">
-                        <span style="color: <?= $corTextosCronometro ?>;"><?= $textoInscricoesCronometro ?></span>
+                    <div class="horas" style="background-color: <?= $corFundoCronometro ?>;">
+                        <span id="horas" style="color: <?= $corTextosCronometro ?>;">0</span>
+                        <p style="color: <?= $corTextosCronometro ?>;">HORAS</p>
                     </div>
-                    <div class="encerramento">
-                        <div class="dias" style="background-color: <?= $corFundoCronometro ?>;">
-                            <span id="dias" style="color: <?= $corTextosCronometro ?>; margin-top:10px">0</span>
-                            <p style="color: <?= $corTextosCronometro ?>;">DIAS</p>
-                        </div>
-                        <div class="horas" style="background-color: <?= $corFundoCronometro ?>;">
-                            <span id="horas" style="color: <?= $corTextosCronometro ?>;margin-top:10px ;">0</span>
-                            <p style="color: <?= $corTextosCronometro ?>;">HORAS</p>
-                        </div>
-                        <div class="minutos" style="background-color: <?= $corFundoCronometro ?>;">
-                            <span id="minutos" style="color: <?= $corTextosCronometro ?>;margin-top:10px ;">0</span>
-                            <p style="color: <?= $corTextosCronometro ?>;">MINUTOS</p>
-                        </div>
-                        <div class="segundos" style="background-color: <?= $corFundoCronometro ?>;">
-                            <span id="segundos" style="color: <?= $corTextosCronometro ?>;margin-top:10px ;">0</span>
-                            <p style="color: <?= $corTextosCronometro ?>;">SEGUNDOS</p>
-                        </div>
+                    <div class="minutos" style="background-color: <?= $corFundoCronometro ?>;">
+                        <span id="minutos" style="color: <?= $corTextosCronometro ?>;">0</span>
+                        <p style="color: <?= $corTextosCronometro ?>;">MINUTOS</p>
+                    </div>
+                    <div class="segundos" style="background-color: <?= $corFundoCronometro ?>;">
+                        <span id="segundos" style="color: <?= $corTextosCronometro ?>;">0</span>
+                        <p style="color: <?= $corTextosCronometro ?>;">SEGUNDOS</p>
                     </div>
                 </div>
             </div>

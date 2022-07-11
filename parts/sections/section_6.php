@@ -26,12 +26,15 @@ if ($queryconfiguracao_site->have_posts()) {
         $corVideoRelatosTexto3 = get_post_meta($post->ID, '_corVideoRelatosTexto3', true);
         $texto3VideoRelatos = get_post_meta($post->ID, '_texto3VideoRelatos', true);
     } ?>
-    <section class="section-6">
-        <div class="background-section-6" style="background-color: <?= $corFundoSite ?>">
-            <div class="title-relatos">
-                <span style="color: <?= $corVideoRelatosTexto1 ?>"><?= $texto1VideoRelatos ?><span style="color: <?= $corVideoRelatosTexto2 ?>"><?= $texto2VideoRelatos ?></span><span style="color: <?= $corVideoRelatosTexto3 ?>"><?= $texto3VideoRelatos ?></span></span>
+
+    <section class="section-6" style="background-color: <?= $corFundoSite ?>">
+        <div class="section-6-container">
+            <div class="alinhamento">
+                <div class="title-relatos-section-6">
+                    <span style="color: <?= $corVideoRelatosTexto1 ?>"><?= $texto1VideoRelatos ?><span style="color: <?= $corVideoRelatosTexto2 ?>"><?= $texto2VideoRelatos ?></span><span style="color: <?= $corVideoRelatosTexto3 ?>"><?= $texto3VideoRelatos ?></span></span>
+                </div>
             </div>
-            <div class="grid-container-relatos">
+            <div class="videos-relatos-section-6">
                 <?php
                 if ($queryVideoRelato->have_posts()) {
                     while ($queryVideoRelato->have_posts()) {
@@ -39,13 +42,12 @@ if ($queryconfiguracao_site->have_posts()) {
                         $linkVideoYt = get_the_content();
                         $videoTratado = str_replace("watch?v=", "embed/", $linkVideoYt);
                 ?>
-                        <div class="grid-item-relatos">
-                            <iframe width="380" height="200" src="<?= $videoTratado ?>" title="YouTube video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
-                        </div>
+                        <iframe style="margin: 5px;" width="400" height="220" src="<?= $videoTratado ?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 <?php }
                 }; ?>
             </div>
         </div>
     </section>
+
 <?php
 }

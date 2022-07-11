@@ -26,15 +26,17 @@ if ($queryconfiguracao_site->have_posts()) {
         $linkRedirecionamentoBotao = get_post_meta($post->ID, '_linkRedirecionamentoBotao', true);
     } ?>
 
-    <section class="section-3">
-        <div class="background-section-3" style="background-color: <?= $corFundoSite ?>">
-            <div class="title-informacoes" style="width: 930px">
-                <span style="color: <?= $corTexto1VideoPrincipal ?>"><?= $texto1VideoPrincipal ?><span style="color: <?= $corTexto2VideoPrincipal ?>"><?= $texto2VideoPrincipal ?></span></span>
+    <section class="section-3" style="background-color: <?= $corFundoSite ?>">
+        <div class="section-3-container">
+            <div class="alinhamento">
+                <div class="title-section-3">
+                    <span style="color: <?= $corTexto1VideoPrincipal ?>"><?= $texto1VideoPrincipal ?><span style="color: <?= $corTexto2VideoPrincipal ?>"><?= $texto2VideoPrincipal ?></span></span>
+                </div>
             </div>
-            <div class="video-informacoes">
-                <iframe width="860" height="480" src="<?= $videoTratado ?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="video-section-3">
+                <iframe width="820" height="460" src="<?= $videoTratado ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
-            <div class="btn-inscrever-se-section-3">
+            <div class="btn-inscrever-section-3">
                 <a href="<?= $linkRedirecionamentoBotao ?>" target="_blank">
                     <button style="background-color: <?= $corBotaoPrincipal ?>;">
                         <i class="fa-solid fa-arrow-right"></i>

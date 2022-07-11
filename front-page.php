@@ -7,6 +7,5 @@
 <?php require_once dirname(__FILE__) . '/parts/sections/section_5.php' ?>
 <?php require_once dirname(__FILE__) . '/parts/sections/section_6.php' ?>
 <?php require_once dirname(__FILE__) . '/parts/sections/section_7.php' ?>
-<?php require_once dirname(__FILE__) . '/parts/sections/section_8.php' ?>
 
 <?php require_once 'footer.php'; ?>

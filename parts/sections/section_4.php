@@ -26,28 +26,30 @@ if ($queryconfiguracao_site->have_posts()) {
         $subTitulo = get_post_meta($post->ID, '_subTitulo', true);
     } ?>
 
-    <section class="section-4">
-        <div class="background-section-4" style="background-color: <?= $corFundoSite ?>">
-            <div class="grid-container">
-                <?php if ($queryadicionarModulo->have_posts()) {
-                    while ($queryadicionarModulo->have_posts()) {
-                        $queryadicionarModulo->the_post(); ?>
-                        <div class="grid-item" style="background-color: <?= $corFundoModulos ?>;border-style: solid; border-width: 0px 0px 0px 2px;border-color: <?= $corDetalheModuloEsquerda ?>;">
-                            <div class="icon-modulo">
-                                <img src="<?= get_the_post_thumbnail_url(); ?>" width="45px">
+    <section class="section-4" style="background-color: <?= $corFundoSite ?>">
+        <div class="section-4-container">
+            <div class="alinhamento">
+                <div class="container-section-4-grid">
+
+                    <?php if ($queryadicionarModulo->have_posts()) {
+                        while ($queryadicionarModulo->have_posts()) {
+                            $queryadicionarModulo->the_post(); ?>
+                            <div class="item-section-4-grid" style="background-color: <?= $corFundoModulos ?>; border-style: solid; border-width: 0px 0px 0px 2px;border-color: <?= $corDetalheModuloEsquerda ?>;">
+                                <div class="item-icon-section-4-grid">
+                                    <img src="<?= get_the_post_thumbnail_url(); ?>" width="45px">
+                                </div>
+                                <div class="informacoes-section-4-grid">
+                                    <span class="title-section-4-grid" style="color: <?= $corTituloModulo ?>"><?= get_the_title(); ?></span>
+                                    <?php $textoo = get_the_content(); ?>
+                                    <p class="text-section-4-grid" style="color: <?= $corTextoModulo ?>"><?= $textoo; ?></p>
+                                </div>
                             </div>
-                            <div class="title-grid-modulo">
-                                <span style="color: <?= $corTituloModulo ?>"><?= get_the_title(); ?></span>
-                            </div>
-                            <div class="text-grid-modulo">
-                                <?php $textoo = get_the_content(); ?>
-                                <p style="color: <?= $corTextoModulo ?>"><?= $textoo; ?></p>
-                            </div>
-                        </div>
-                <?php
+                    <?php
+                        }
                     }
-                }
-                ?>
+                    ?>
+
+                </div>
             </div>
         </div>
     </section>

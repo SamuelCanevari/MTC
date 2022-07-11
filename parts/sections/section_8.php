@@ -31,24 +31,9 @@ if ($queryconfiguracao_site->have_posts()) {
     } ?>
 
     <section class="section-8">
-        <div class="background-section-8" style="background-color: <?= $corFundoSite ?>">
-            <div class="garantia-box" style="background-color: <?= $corFundoGarantia ?>">
-                <div class="title-garantia">
-                    <span style="color: <?= $corTituloGarantia ?>"><?= $textoTituloGarantia ?></span>
-                </div>
-                <div class="garantia-incondicional" style="background-color: <?= $corFundoTextoDestaqueGarantia1 ?>">
-                    <span style="color: <?= $corTextoDestaqueGarantia1 ?>"><?= $textoDestaqueGarantia1 ?></span>
-                </div>
-                <div class="text-garantia-incondicional">
-                    <span style="width: 640px; color: <?= $corTextoDescricaoDestaqueGarantia1 ?>"><?= $textoDescricaoDestaqueGarantia1 ?></span>
-                </div>
-                <div class="garantia-condicional" style="background-color: <?= $corFundoTextoDestaqueGarantia2 ?>">
-                    <span style="color: <?= $corTextoDestaqueGarantia2 ?>"><?= $textoDestaqueGarantia2 ?></span>
-                </div>
-                <div class="text-garantia-condicional">
-                    <span style="width: 640px"><?= $textoDescricaoDestaqueGarantia2 ?></span>
-                </div>
-                <div class="imagem-garantia">
+        <div class="section-8-container" style="background-color: <?= $corFundoSite ?>">
+            <div class="box-garantia-section-8" style="background-color: <?= $corFundoGarantia ?>">
+                <div class="img-garantia-section-8">
                     <?php
                     if ($imagemGarantia !== '') { ?>
                         <img src="<?= $imagemGarantia ?>" alt="" width="300px">
@@ -59,10 +44,26 @@ if ($queryconfiguracao_site->have_posts()) {
                     }
                     ?>
                 </div>
-                <div class="atencao-garantia-box" style="background-color: <?= $corFundoGarantiaAtencao ?>">
-                    <div class="atencao-garantia-text">
-                        <em style="color: <?= $corTextoTituloGarantia ?>"><?= $textoAvisoGarantia ?></em>
-                    </div>
+                <span class="title-garantia-section-8" style="color: <?= $corTituloGarantia ?>"><?= $textoTituloGarantia ?></span>
+
+                <div class="garantia-incondicional-section-8" style="background-color: <?= $corFundoTextoDestaqueGarantia1 ?>;color: <?= $corTextoDestaqueGarantia1 ?>">
+                    <?= $textoDestaqueGarantia1 ?>
+                </div>
+                <div class="text-garantia-section-8">
+                    <p style="color: <?= $corTextoDescricaoDestaqueGarantia1 ?>"><?= $textoDescricaoDestaqueGarantia1 ?></p>
+                </div>
+
+                <div class="garantia-condicional-section-8" style="background-color: <?= $corFundoTextoDestaqueGarantia2 ?>;color: <?= $corTextoDestaqueGarantia2 ?>">
+                    <?= $textoDestaqueGarantia2 ?>
+                </div>
+                <div class="text-garantia-section-8">
+                    <p style="color: <?= $corTextoDescricaoDestaqueGarantia2 ?>"><?= $textoDescricaoDestaqueGarantia2 ?></p>
+                </div>
+
+                <div class="box-garantia-2-section-8" style="background-color: <?= $corFundoGarantiaAtencao ?>">
+                    <span style="color: <?= $corTextoTituloGarantia ?>">
+                        <?= $textoAvisoGarantia ?>
+                    </span>
                 </div>
             </div>
         </div>

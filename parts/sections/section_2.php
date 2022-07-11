@@ -27,23 +27,19 @@ if ($queryconfiguracao_site->have_posts()) {
         $corTextoQuadro = get_post_meta($post->ID, '_corTextoQuadro', true);
     } ?>
 
-    <section class="section-2">
-        <div class="background-section-2" style="background-color: <?= $corFundoSite ?>">
-            <div class="container-informacoes-grid">
+    <section class="section-2" style="background-color: <?= $corFundoSite ?>">
+        <div class="section-2-container">
+            <div class="container-section-2-grid">
                 <?php
                 if ($queryadicionarQuadrado->have_posts()) {
                     while ($queryadicionarQuadrado->have_posts()) {
                         $queryadicionarQuadrado->the_post(); ?>
-                        <div class="item-informacoes-grid" style="background-color: <?= $corFundoQuadro ?>">
-                            <div class="box-icon-informacoes" style="background-color: <?= $corFundoIcone ?>">
+                        <div class="item-section-2-grid" style="background-color: <?= $corFundoQuadro ?>">
+                            <div class="icon-section-2-grid" style="background-color: <?= $corFundoIcone ?>">
                                 <img src="<?= get_the_post_thumbnail_url(); ?>" width='30px' />
                             </div>
-                            <div class="title-informacoes-grid">
-                                <span style="color: <?= $corTituloQuadro ?>;"><?= the_title(); ?></span>
-                            </div>
-                            <div class="text-informacoes-grid">
-                                <p style="color: <?= $corTextoQuadro ?>; width: 17rem; margin-top: 10px"><?= get_the_content(); ?></p>
-                            </div>
+                            <span class="title-section-2-grid" style="color: <?= $corTituloQuadro ?>;"><?= the_title(); ?></span>
+                            <p class="text-section-2-grid" style="color: <?= $corTextoQuadro ?>"><?= get_the_content(); ?></p>
                         </div>
                 <?php
                     }

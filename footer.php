@@ -31,31 +31,32 @@ if ($queryconfiguracao_site->have_posts()) {
         $imagemCentro = get_post_meta($post->ID, '_aw_custom_image2', true);
     } ?>
 
+
     <footer class="footer">
         <div class="background-footer">
-            <div class="logo-mtc-footer">
-                <img src="<?= $imagemEsquerda ?>" alt="" width="260px">
-            </div>
-            <div class="logo-adriano-gianini">
-                <img src="<?= $imagemCentro ?>" alt="" width="280px">
-            </div>
-            <div class="text-1">
-                <span><?= $editora ?><br><?= $cnpj ?><br><a href="<?= "mailto:" . $email ?>" style="color: <?= $corInformacaoDireita ?>;text-decoration:none"><?= $email ?></a></span>
-            </div>
-            <div class="linha-1">
-                <hr />
-            </div>
-            <div class="termos">
-                <span><?= $termosDeUso ?><a href="<?= $termosDeUsoLink ?>"><?= $termosDeUsoLinkTexto ?></a></span>
-            </div>
-            <div class="aviso">
-                <span><?= $avisoLegal . " " . $avisoLegalDescricao ?></span>
-            </div>
-            <div class="copyright">
-                <span><?= $copyright ?></span>
-            </div>
-            <div class="linha-2">
-                <hr />
+            <div class="alinhamento">
+                <div class="footer-center">
+                    <img src="<?= $imagemEsquerda ?>" alt="" class="logo-footer" width="280px">
+                    <img src="<?= $imagemCentro ?>" alt="" class="logo-footer" width="280px">
+                    <span class="informacoes-footer">
+                        <?= $editora ?>
+                        <br>
+                        <?= $cnpj ?>
+                        <br>
+                        <a href="<?= "mailto:" . $email ?>" style="color: <?= $corInformacaoDireita ?>;text-decoration:none"><?= $email ?></a>
+                    </span>
+                    <hr class="linha-footer">
+                    <span class="termos-footer">
+                        <?= $termosDeUso ?> <a href="<?= $termosDeUsoLink ?>"><?= $termosDeUsoLinkTexto ?></a>
+                    </span>
+                    <hr class="linha-footer">
+                    <span class="avisos-footer">
+                        <?= $avisoLegal . " " . $avisoLegalDescricao ?>
+                    </span>
+                    <span class="copyright-footer">
+                        <?= $copyright ?>
+                    </span>
+                </div>
             </div>
         </div>
     </footer>
